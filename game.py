@@ -18,10 +18,12 @@ class RockPaperScissors:
         self.user_name = input("Enter your name: ")
         print(f"Hello, {self.user_name.title()}")
         self.open_file('rating.txt')
-        custom_options = input()
+        custom_options = input("Enter list of options. " \
+                               "If you want to play choosing default ones, press Enter")
         if custom_options:
             self.default_options = custom_options.split(',')
-        print("Okay, let's start")
+        print("Enter !exit to exit, !rating to see rating or one of the following options to play:")
+        print(*self.default_options)
         while True:
             user_input = input()
             if user_input == '!exit':
