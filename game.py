@@ -1,3 +1,4 @@
+from os import path
 from random import choice
 
 
@@ -6,6 +7,7 @@ class RockPaperScissors:
         self.default_options = ['paper', 'scissors', 'rock']
         self.score = 0
         self.user_name = ''
+        self.file_name = 'rating.txt'
 
     def open_file(self, filename):
         with open(filename, 'r') as file:
@@ -17,7 +19,8 @@ class RockPaperScissors:
     def start_game(self):
         self.user_name = input("Enter your name: ")
         print(f"Hello, {self.user_name.title()}")
-        self.open_file('rating.txt')
+        if path.exists(self.file_name):
+            self.open_file(self.file_name)
         custom_options = input("Enter list of options. " \
                                "If you want to play choosing default ones, press Enter")
         if custom_options:
