@@ -4,7 +4,7 @@ from random import choice
 
 class RockPaperScissors:
     def __init__(self):
-        self.default_options = ['paper', 'scissors', 'rock']
+        self.default_options = ['rock', 'paper', 'scissors']
         self.score = 0
         self.user_name = ''
         self.file_name = 'rating.txt'
